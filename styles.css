@@ -254,7 +254,9 @@ section{position:relative}
 .loc-head{text-align:center;margin-bottom:40px}
 .loc-head .lead{margin-top:6px}
 .loc-route{margin-top:26px}
-.map-wrap{position:relative;width:100%;height:460px;border-radius:14px;overflow:hidden;border:1px solid var(--line-dark);filter:grayscale(.25) contrast(1.02)}
+.map-wrap{position:relative;width:100%;height:460px;border-radius:14px;overflow:hidden;border:1px solid var(--line-dark)}
+.footer-addr{color:var(--text-muted);transition:color .3s}
+.footer-addr:hover{color:var(--gold)}
 .map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 @media(max-width:600px){.location{padding:64px 0}.map-wrap{height:360px;border-radius:10px}}
 
