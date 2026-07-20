@@ -27,6 +27,17 @@ document.querySelectorAll('.reveal').forEach((el, i) => {
   io.observe(el);
 });
 
+// ---- Открытие публичной оферты из футера ----
+const offerLink = document.querySelector('.offer-link');
+const offerBox = document.getElementById('offer');
+if (offerLink && offerBox) {
+  offerLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    offerBox.open = true;
+    offerBox.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
+
 // ---- Contact form (demo) ----
 const form = document.getElementById('ctaForm');
 const status = document.getElementById('ctaStatus');
