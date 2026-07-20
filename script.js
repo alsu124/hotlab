@@ -12,6 +12,14 @@ nav.querySelectorAll('a').forEach(a =>
   a.addEventListener('click', () => nav.classList.remove('open'))
 );
 
+// ---- Плавающая кнопка звонка (появляется при прокрутке) ----
+const callFab = document.querySelector('.call-fab');
+if (callFab) {
+  const toggleFab = () => callFab.classList.toggle('show', window.scrollY > 400);
+  toggleFab();
+  window.addEventListener('scroll', toggleFab, { passive: true });
+}
+
 // ---- Reveal on scroll ----
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => {
