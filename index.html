@@ -34,24 +34,79 @@
   {
     "@context": "https://schema.org",
     "@type": "HealthClub",
+    "@id": "https://hotlabstudio.ru/#business",
     "name": "HOT LAB",
     "description": "Студия пилатеса на реформерах и горячих тренировок в зале 36° в Казани.",
     "url": "https://hotlabstudio.ru/",
     "telephone": "+79939254923",
-    "image": "https://hotlabstudio.ru/assets/hero.jpg",
+    "image": [
+      "https://hotlabstudio.ru/assets/hero.jpg",
+      "https://hotlabstudio.ru/assets/studio.jpg",
+      "https://hotlabstudio.ru/assets/room.jpg"
+    ],
     "priceRange": "₽₽",
     "currenciesAccepted": "RUB",
+    "paymentAccepted": "Cash, Credit Card",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "ул. Бехтерева, 9А",
       "addressLocality": "Казань",
       "addressRegion": "Республика Татарстан",
-      "postalCode": "420101",
+      "postalCode": "420111",
       "addressCountry": "RU"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 55.7994001,
+      "longitude": 49.1195819
     },
     "areaServed": "Казань",
     "hasMap": "https://yandex.ru/maps/?text=Казань, улица Бехтерева, 9А",
-    "sameAs": ["https://n1938413.yclients.com"]
+    "sameAs": ["https://n1938413.yclients.com"],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "name": "Индивидуальная тренировка — горячий зал",
+        "price": "3000",
+        "priceCurrency": "RUB"
+      },
+      {
+        "@type": "Offer",
+        "name": "Индивидуальная тренировка — классический зал",
+        "price": "2500",
+        "priceCurrency": "RUB"
+      },
+      {
+        "@type": "Offer",
+        "name": "Индивидуальная тренировка — тренер Карина",
+        "price": "3500",
+        "priceCurrency": "RUB"
+      },
+      {
+        "@type": "Offer",
+        "name": "Безлимитный абонемент на 1 месяц",
+        "price": "21000",
+        "priceCurrency": "RUB"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Направления HOT LAB",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Горячая йога 36°", "url": "https://hotlabstudio.ru/goryachaya-yoga.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Горячий пилатес 36°", "url": "https://hotlabstudio.ru/goryachiy-pilates.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pilates Reformer mini group", "url": "https://hotlabstudio.ru/pilates-reformer.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Горячая растяжка 36° + МФР", "url": "https://hotlabstudio.ru/goryachaya-rastyazhka.html" } }
+      ]
+    }
   }
   </script>
 </head>
@@ -152,6 +207,7 @@
             <h3>Горячая йога 36°</h3>
             <p class="dir-lead">Горячая йога в Казани — тренировка для гибкости, тонуса тела и восстановления.</p>
             <p class="dir-desc">Горячая йога 36° в Hot Lab — мягкая и глубокая практика в тёплом зале, которая помогает расслабить мышцы, улучшить гибкость, снять напряжение и восстановить баланс тела и нервной системы. Подходит для улучшения гибкости, укрепления мышц, снятия стресса и восстановления после нагрузок.</p>
+            <a href="goryachaya-yoga.html" class="link-arrow">Подробнее →</a>
           </div>
         </article>
         <article class="dir-card reveal">
@@ -161,6 +217,7 @@
             <h3>Горячий пилатес 36°</h3>
             <p class="dir-lead">Горячий пилатес в Казани — эффективная тренировка для красивого рельефа и сильного тела.</p>
             <p class="dir-desc">Занятие объединяет принципы пилатеса и работу в тёплом зале. Тренировка направлена на глубокие мышцы, укрепление мышечного корсета, улучшение осанки и формирование красивого силуэта.</p>
+            <a href="goryachiy-pilates.html" class="link-arrow">Подробнее →</a>
           </div>
         </article>
         <article class="dir-card reveal">
@@ -170,6 +227,7 @@
             <h3>Горячая растяжка 36° + МФР</h3>
             <p class="dir-lead">Горячая растяжка и миофасциальный релиз в Казани — гибкость, расслабление и восстановление тела.</p>
             <p class="dir-desc">Тренировка сочетает глубокую растяжку в тёплом зале и техники МФР. Помогает снять мышечное напряжение, улучшить подвижность тела и сделать движения более свободными.</p>
+            <a href="goryachaya-rastyazhka.html" class="link-arrow">Подробнее →</a>
           </div>
         </article>
         <article class="dir-card reveal">
@@ -188,6 +246,7 @@
             <h3>Pilates Reformer mini group</h3>
             <p class="dir-lead">Пилатес на реформере в Казани — тренировки на тренажёре Reformer в мини-группах.</p>
             <p class="dir-desc">Занятия помогают глубоко проработать мышцы, улучшить осанку, укрепить тело и сформировать гармоничный рельеф. Подходит для женщин любого уровня подготовки.</p>
+            <a href="pilates-reformer.html" class="link-arrow">Подробнее →</a>
           </div>
         </article>
         <article class="dir-card reveal">

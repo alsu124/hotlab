@@ -41,6 +41,7 @@ const statusEl = document.getElementById('ctaStatus');
 const TG_TOKEN = '8903006123:AAF3B7_8CTBAhKHXz1hrpRw7vbfSZfnqNsk';
 const TG_CHAT = '-5367894062';
 
+if (form) {
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const name = form.elements['name'].value.trim();
@@ -71,3 +72,4 @@ form.addEventListener('submit', async (e) => {
     btn.disabled = false;
   }
 });
+}
