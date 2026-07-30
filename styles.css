@@ -1,12 +1,12 @@
 /* ===================== TOKENS ===================== */
 :root{
-  --bg-deep:#1c0e0c;
-  --bg-burgundy:#3a1f1b;
-  --bg-brown:#2a1512;
-  --bg-maroon:#4a2620;
-  --cream:#ece2d6;
-  --cream-2:#e5d8c9;
-  --cream-panel:#eae0d3;
+  --bg-deep:#431317;
+  --bg-burgundy:#431317;
+  --bg-brown:#431317;
+  --bg-maroon:#431317;
+  --cream:#d6c6bb;
+  --cream-2:#d6c6bb;
+  --cream-panel:#d6c6bb;
   --text-cream:#efe6da;
   --text-muted:#b7a595;
   --text-dark:#3a241e;
@@ -63,7 +63,7 @@ a{color:inherit;text-decoration:none}
 
 /* ===================== HEADER ===================== */
 .site-header{position:fixed;top:0;left:0;width:100%;z-index:100;transition:.5s var(--ease);padding:22px 0}
-.site-header.scrolled{background:rgba(28,14,12,.82);backdrop-filter:blur(14px);padding:14px 0;border-bottom:1px solid var(--line-dark)}
+.site-header.scrolled{background:rgba(67,19,23,.82);backdrop-filter:blur(14px);padding:14px 0;border-bottom:1px solid var(--line-dark)}
 .header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;flex-direction:column;line-height:1.1}
 .brand-name{font-family:var(--serif);font-size:1.5rem;letter-spacing:.22em;font-weight:400}
@@ -82,7 +82,7 @@ a{color:inherit;text-decoration:none}
 .hero-bg{
   position:absolute;inset:0;z-index:0;
   background:
-    linear-gradient(180deg,rgba(28,14,12,.55) 0%,rgba(58,31,27,.45) 45%,rgba(28,14,12,.92) 100%),
+    linear-gradient(180deg,rgba(67,19,23,.55) 0%,rgba(67,19,23,.45) 45%,rgba(67,19,23,.92) 100%),
     radial-gradient(120% 90% at 70% 40%,rgba(120,60,45,.28),transparent 60%),
     url('assets/hero.jpg') center 22%/cover;
   filter:saturate(.95) contrast(1.02);
@@ -113,7 +113,7 @@ section{position:relative}
 .third-text .section-title{color:var(--text-dark)}
 .third-text .lead{margin-top:24px;color:var(--text-dark-muted)}
 .third-image{aspect-ratio:4/3.4;border-radius:26px;background:
-  linear-gradient(180deg,rgba(40,20,16,.05),rgba(40,20,16,.2)),
+  linear-gradient(180deg,rgba(67,19,23,.05),rgba(67,19,23,.2)),
   url('assets/arch.jpg') center/cover;}
 
 /* ===================== ABOUT ===================== */
@@ -121,7 +121,7 @@ section{position:relative}
 .about-text .display{margin:6px 0 26px}
 .about-text p{color:var(--text-muted);margin-bottom:16px;max-width:42ch}
 .about-image{aspect-ratio:4/3.2;border-radius:22px;background:
-  linear-gradient(120deg,rgba(58,31,27,.15),rgba(28,14,12,.25)),
+  linear-gradient(120deg,rgba(67,19,23,.15),rgba(67,19,23,.25)),
   url('assets/studio.jpg') center/cover;}
 
 /* ===================== DIRECTIONS ===================== */
@@ -130,8 +130,8 @@ section{position:relative}
 .directions-head .lead{color:var(--text-dark-muted)}
 .cards{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .card{position:relative;aspect-ratio:.62;border-radius:16px;overflow:hidden;background-size:cover;background-position:center;display:flex;align-items:flex-end;isolation:isolate}
-.card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,14,12,.05) 30%,rgba(20,10,8,.92) 100%);z-index:1;transition:.5s var(--ease)}
-.card:hover::before{background:linear-gradient(180deg,rgba(28,14,12,.2) 10%,rgba(20,10,8,.95) 100%)}
+.card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(67,19,23,.05) 30%,rgba(67,19,23,.92) 100%);z-index:1;transition:.5s var(--ease)}
+.card:hover::before{background:linear-gradient(180deg,rgba(67,19,23,.2) 10%,rgba(67,19,23,.95) 100%)}
 .card{transition:transform .5s var(--ease)}
 .card:hover{transform:translateY(-6px)}
 .card-overlay{position:relative;z-index:2;padding:22px 20px;color:var(--text-cream)}
@@ -182,7 +182,7 @@ section{position:relative}
 .philosophy-text .section-title{color:var(--text-dark);margin:6px 0 22px}
 .philosophy-text .lead{color:var(--text-dark-muted)}
 .philosophy-image{aspect-ratio:4/3;border-radius:22px;background:
-  linear-gradient(120deg,rgba(236,226,214,.03),rgba(160,120,90,.08)),
+  linear-gradient(120deg,rgba(214,198,187,.03),rgba(160,120,90,.08)),
   url('assets/room.jpg') center/cover;}
 
 /* ===================== PRICING ===================== */
@@ -304,7 +304,7 @@ section{position:relative}
   .hero-facts{gap:26px;max-width:360px}
   .contact-tiles{grid-template-columns:1fr 1fr}
   .schedule-panel{padding:36px 24px}
-  .site-header .nav.open{display:flex;position:absolute;top:100%;left:0;width:100%;flex-direction:column;background:rgba(28,14,12,.97);padding:26px 32px;gap:22px;margin:0;border-bottom:1px solid var(--line-dark)}
+  .site-header .nav.open{display:flex;position:absolute;top:100%;left:0;width:100%;flex-direction:column;background:rgba(67,19,23,.97);padding:26px 32px;gap:22px;margin:0;border-bottom:1px solid var(--line-dark)}
 }
 @media(max-width:560px){
   .container{padding:0 20px}
