@@ -68,7 +68,8 @@ a{color:inherit;text-decoration:none}
 .brand{display:flex;flex-direction:column;line-height:1.1}
 .brand-name{font-family:var(--serif);font-size:1.5rem;letter-spacing:.22em;font-weight:400}
 .brand-tag{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text-muted);margin-top:3px}
-.nav{display:flex;gap:38px;margin-left:auto;margin-right:32px}
+.nav{display:flex;gap:26px;margin-left:auto;margin-right:28px;flex-shrink:0}
+.brand{flex-shrink:0}
 .nav-link{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;opacity:.8;transition:.3s;position:relative}
 .nav-link:hover{opacity:1}
 .nav-link::after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:.35s var(--ease)}
@@ -248,6 +249,17 @@ section{position:relative}
 .admin-note .c-ico{font-size:1.6rem}
 .admin-note p{color:var(--text-dark-muted);font-size:.92rem}
 
+/* ===================== BLOG TEASER ===================== */
+.blog-teaser{background:var(--bg-brown);padding:110px 0}
+.blog-teaser-head{max-width:640px;margin-bottom:44px}
+.blog-teaser-head .section-title{color:var(--text-cream)}
+.blog-teaser-head .lead{color:var(--text-muted)}
+.blog-teaser-soon{display:flex;flex-direction:column;align-items:flex-start;gap:14px;max-width:520px;border:1px solid var(--line-dark);border-radius:14px;padding:34px 36px}
+.blog-soon-icon{font-size:1.4rem;color:var(--gold)}
+.blog-teaser-soon p{color:var(--text-muted);font-size:.94rem;line-height:1.6}
+.blog-teaser-soon .link-arrow{margin-top:0;color:var(--text-cream)}
+@media(max-width:560px){.blog-teaser{padding:70px 0}.blog-teaser-soon{padding:26px 24px}}
+
 /* ===================== CTA ===================== */
 .cta-inner{text-align:center;max-width:720px;margin:0 auto}
 .cta-inner .display{color:var(--text-dark);margin:6px 0 20px}
@@ -313,6 +325,21 @@ section{position:relative}
 .cross-card span{color:var(--text-dark-muted);font-size:.86rem}
 @media(max-width:760px){.cross-grid{grid-template-columns:1fr}}
 @media(max-width:600px){.page-hero{padding-top:120px}.page-block,.page-cta{padding:60px 0}}
+
+/* Страница блога: список статей + пустое состояние */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px}
+.blog-card{background:var(--cream-panel);border:1px solid var(--line-light);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.blog-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(42,10,8,.14)}
+.blog-card-photo{aspect-ratio:4/3;background-size:cover;background-position:center}
+.blog-card-body{padding:24px 26px 26px}
+.blog-card-date{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.blog-card-body h3{font-family:var(--serif);font-size:1.25rem;font-weight:400;color:var(--text-dark);margin:10px 0 10px;line-height:1.2}
+.blog-card-body p{font-size:.88rem;color:var(--text-dark-muted);line-height:1.6}
+.blog-empty{display:flex;flex-direction:column;align-items:flex-start;gap:14px;max-width:560px;border:1px solid var(--line-light);border-radius:14px;padding:40px 42px;background:var(--cream-panel)}
+.blog-empty span{font-size:1.5rem;color:var(--gold)}
+.blog-empty p{color:var(--text-dark-muted);font-size:.96rem;line-height:1.65}
+@media(max-width:960px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr}.blog-empty{padding:28px 26px}}
 
 /* ===================== REVEAL ===================== */
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
