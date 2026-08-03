@@ -41,6 +41,16 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://hotlabstudio.ru/5-oshibok-novichkov-na-reformere.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hotlabstudio.ru/gde-zanimatsya-pilatesom-v-kazani.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://hotlabstudio.ru/oferta.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
