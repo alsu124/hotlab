@@ -345,6 +345,21 @@ section{position:relative}
 @media(max-width:960px){.blog-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.blog-grid{grid-template-columns:1fr}.blog-empty{padding:28px 26px}}
 
+/* Отзывы клиентов */
+.reviews-source{display:flex;align-items:center;gap:10px;margin-bottom:28px;font-size:.86rem;color:var(--text-dark-muted)}
+.reviews-source b{color:var(--text-dark);font-family:var(--serif);font-size:1.3rem;font-weight:500}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.review-card{background:var(--cream-panel);border:1px solid var(--line-light);border-radius:10px;padding:26px 28px;display:flex;flex-direction:column}
+.review-stars{color:var(--gold);font-size:.85rem;letter-spacing:.1em;margin-bottom:12px}
+.review-card p{color:var(--text-dark);font-size:.92rem;line-height:1.65;margin-bottom:16px;flex-grow:1}
+.review-author{font-size:.8rem;color:var(--text-dark-muted);font-weight:600}
+@media(max-width:960px){.reviews-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.reviews-grid{grid-template-columns:1fr}}
+
+/* Реквизиты (карточка) */
+.req-card{background:var(--cream-panel);border:1px solid var(--line-light);border-radius:10px;padding:30px 32px;line-height:2;font-size:.94rem;color:var(--text-dark)}
+.req-card b{color:var(--text-dark);font-weight:600}
+
 /* ===================== REVEAL ===================== */
 .reveal{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
 .reveal.in{opacity:1;transform:none}
