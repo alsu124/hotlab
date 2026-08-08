@@ -37,9 +37,11 @@
     "@type": "HealthClub",
     "@id": "https://hotlabstudio.ru/#business",
     "name": "HOT LAB",
+    "alternateName": "Хот Лаб",
     "description": "Студия пилатеса на реформерах и горячих тренировок в зале 36° в Казани.",
     "url": "https://hotlabstudio.ru/",
     "telephone": "+79939254923",
+    "email": "v-iks@mail.ru",
     "image": [
       "https://hotlabstudio.ru/assets/hero.jpg",
       "https://hotlabstudio.ru/assets/studio.jpg",
@@ -47,7 +49,7 @@
     ],
     "priceRange": "₽₽",
     "currenciesAccepted": "RUB",
-    "paymentAccepted": "Cash, Credit Card",
+    "paymentAccepted": "Cash, Credit Card, QR",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "ул. Бехтерева, 9А",
@@ -72,15 +74,9 @@
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
         "opens": "08:00",
         "closes": "21:00"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Saturday", "Sunday"],
-        "opens": "09:00",
-        "closes": "15:00"
       }
     ],
     "aggregateRating": {
@@ -127,6 +123,24 @@
     }
   }
   </script>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+     m[i].l=1*new Date();
+     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+     ym(108703053, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true,
+          webvisor:true,
+          trackHash:true
+     });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/108703053" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
 </head>
 <body>
 
@@ -157,7 +171,7 @@
     <div class="hero-bg" role="img" aria-label="Студия горячего пилатеса HOT LAB в Казани — зал для тренировок"></div>
     <div class="container hero-content">
       <p class="hero-kicker">Твои тренировки ещё никогда не были такими красивыми</p>
-      <h1 class="hero-title">HOT LAB</h1>
+      <h1 class="hero-title">HOT LAB<span class="hero-h1-sub">Студия пилатеса и горячих тренировок в Казани</span></h1>
       <div class="hero-actions">
         <a href="https://n1938413.yclients.com" target="_blank" rel="noopener" class="btn btn-solid">Записаться <span class="arrow">→</span></a>
         <a href="#contact" class="btn btn-outline">Связаться с нами</a>
@@ -198,7 +212,7 @@
     <div class="container about-inner">
       <div class="about-text reveal">
         <span class="eyebrow">О студии</span>
-        <h2 class="display">HOT LAB</h2>
+        <h2 class="display">Премиальная студия пилатеса в Казани</h2>
         <p>HOT LAB — премиальная фитнес-студия для тех, кто выбирает осознанный подход к себе и своему телу.</p>
         <p>Мы объединили эстетику современного wellness-пространства, профессиональные методики и атмосферу заботы, чтобы каждая тренировка стала вашим личным ритуалом.</p>
         <a href="#philosophy" class="link-arrow">Наша философия →</a>
@@ -545,6 +559,7 @@
         <span class="eyebrow">Как нас найти</span>
         <h2 class="display">Мы в Казани</h2>
         <p class="lead">ул. Бехтерева, 9А</p>
+        <p class="loc-hours">Ежедневно 8:00–21:00</p>
         <a href="https://yandex.ru/maps/?rtext=~Казань, улица Бехтерева, 9А&rtt=auto" target="_blank" rel="noopener" class="btn btn-solid loc-route">Построить маршрут <span class="arrow">→</span></a>
       </div>
       <div class="map-wrap">
@@ -571,7 +586,11 @@
         <a href="#contact">MAX</a>
       </nav>
     </div>
+      <div class="container footer-legal">
+      <p>ИП Икс Валерия Олеговна · ИНН 165059447913 · Ежедневно 8:00–21:00 · <a href="tel:+79939254923">+7 993 925-49-23</a> · <a href="mailto:v-iks@mail.ru">v-iks@mail.ru</a></p>
+    </div>
   </footer>
+
 
   <!-- Плавающая кнопка звонка -->
   <a href="tel:+79939254923" class="call-fab" aria-label="Позвонить нам">
