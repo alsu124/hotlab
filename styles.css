@@ -364,6 +364,26 @@ section{position:relative}
 .reviews-widget iframe{display:block;width:100%;height:700px;border:0}
 @media(max-width:600px){.reviews-widget iframe{height:560px}}
 
+/* ===================== HOT LAB COMMUNITY ===================== */
+.community{background:var(--cream);color:var(--text-dark);padding:110px 0;overflow:hidden}
+.community-head{max-width:640px;margin-bottom:48px}
+.community-head .section-title{color:var(--text-dark)}
+.community-head .lead{color:var(--text-dark-muted)}
+.community-slider{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:4px 32px 16px;margin:0 -32px;scrollbar-width:thin}
+.community-card{scroll-snap-align:start;flex:0 0 320px;background:var(--cream-panel);border:1px solid var(--line-light);border-radius:10px;padding:30px 28px;display:flex;flex-direction:column;transition:transform .4s var(--ease)}
+.community-card:hover{transform:translateY(-4px)}
+.community-stars{color:var(--gold);font-size:.8rem;letter-spacing:.1em;margin-bottom:14px}
+.community-card p{color:var(--text-dark);font-size:.92rem;line-height:1.7;margin-bottom:18px;flex-grow:1}
+.community-author{font-size:.8rem;color:var(--text-dark-muted);font-weight:600}
+.community-foot{margin-top:8px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.community-foot b{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:var(--text-dark)}
+.community-foot span{font-size:.84rem;color:var(--text-dark-muted)}
+@media(max-width:600px){
+  .community{padding:70px 0}
+  .community-card{flex:0 0 82%}
+  .community-slider{margin:0 -20px;padding:4px 20px 16px}
+}
+
 /* Реквизиты (карточка) */
 .req-card{background:var(--cream-panel);border:1px solid var(--line-light);border-radius:10px;padding:30px 32px;line-height:2;font-size:.94rem;color:var(--text-dark)}
 .req-card b{color:var(--text-dark);font-weight:600}
