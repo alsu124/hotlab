@@ -28,10 +28,10 @@ const io = new IntersectionObserver((entries) => {
       io.unobserve(e.target);
     }
   });
-}, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+}, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
 
 document.querySelectorAll('.reveal').forEach((el, i) => {
-  el.style.transitionDelay = `${(i % 4) * 80}ms`;
+  el.style.transitionDelay = `${(i % 4) * 100}ms`;
   io.observe(el);
 });
 
