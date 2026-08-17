@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-08-17 12:00">
+  <shop>
+    <name>HOT LAB</name>
+    <company>ИП Икс Валерия Олеговна</company>
+    <url>https://hotlabstudio.ru</url>
+    <currencies>
+      <currency id="RUB" rate="1"/>
+    </currencies>
+    <categories>
+      <category id="1">Индивидуальные тренировки</category>
+      <category id="2">Абонемент "Полный доступ"</category>
+      <category id="3">Pilates Reformer</category>
+      <category id="4">Групповые направления — холодные</category>
+      <category id="5">Групповые направления — горячие 36°</category>
+      <category id="6">Пробное и разовое занятие</category>
+    </categories>
+    <offers>
+
+      <offer id="1">
+        <name>Индивидуальная тренировка — горячий зал</name>
+        <price>3000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="2">
+        <name>Индивидуальная тренировка — классический зал</name>
+        <price>2500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="3">
+        <name>Индивидуальная тренировка — тренер Карина</name>
+        <price>3500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="4">
+        <name>Абонемент "Полный доступ" — безлимит на 1 месяц</name>
+        <description>Все групповые направления, горячие и cold форматы, Reformer mini groups, 2 гостевых визита в подарок для подруг.</description>
+        <price>21000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="5">
+        <name>Pilates Reformer — индивидуальная тренировка</name>
+        <price>2500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <url>https://hotlabstudio.ru/pilates-reformer.html</url>
+      </offer>
+
+      <offer id="6">
+        <name>Pilates Reformer — 5 индивидуальных тренировок</name>
+        <price>12000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <url>https://hotlabstudio.ru/pilates-reformer.html</url>
+      </offer>
+
+      <offer id="7">
+        <name>Pilates Reformer — 10 индивидуальных тренировок</name>
+        <price>22000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <url>https://hotlabstudio.ru/pilates-reformer.html</url>
+      </offer>
+
+      <offer id="8">
+        <name>Pilates Reformer — сплит-тренировка (разовая, с подругой)</name>
+        <price>2000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <url>https://hotlabstudio.ru/pilates-reformer.html</url>
+      </offer>
+
+      <offer id="9">
+        <name>Pilates Reformer — сплит-тренировка, 5 занятий</name>
+        <price>9500</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <url>https://hotlabstudio.ru/pilates-reformer.html</url>
+      </offer>
+
+      <offer id="10">
+        <name>Pilates Reformer — сплит-тренировка, 10 занятий</name>
+        <price>18000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <url>https://hotlabstudio.ru/pilates-reformer.html</url>
+      </offer>
+
+      <offer id="11">
+        <name>Pilates Reformer — мини-группа до 3 человек (разовая)</name>
+        <price>1700</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <url>https://hotlabstudio.ru/pilates-reformer.html</url>
+      </offer>
+
+      <offer id="12">
+        <name>Pilates Reformer — мини-группа, 5 занятий</name>
+        <price>8000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <url>https://hotlabstudio.ru/pilates-reformer.html</url>
+      </offer>
+
+      <offer id="13">
+        <name>Pilates Reformer — мини-группа, 10 занятий</name>
+        <price>15000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>3</categoryId>
+        <url>https://hotlabstudio.ru/pilates-reformer.html</url>
+      </offer>
+
+      <offer id="14">
+        <name>Абонемент на холодные направления — 4 занятия</name>
+        <description>Срок действия — 30 дней.</description>
+        <price>4600</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>4</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="15">
+        <name>Абонемент на холодные направления — 8 занятий</name>
+        <description>Срок действия — 45 дней.</description>
+        <price>8800</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>4</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="16">
+        <name>Абонемент на холодные направления — 12 занятий</name>
+        <description>Срок действия — 60 дней.</description>
+        <price>12000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>4</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="17">
+        <name>Абонемент на горячие направления 36° — 4 занятия</name>
+        <description>Срок действия — 30 дней.</description>
+        <price>6800</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>5</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="18">
+        <name>Абонемент на горячие направления 36° — 8 занятий (+1 гостевой визит в подарок)</name>
+        <description>Срок действия — 45 дней.</description>
+        <price>12800</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>5</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="19">
+        <name>Абонемент на горячие направления 36° — 12 занятий (+2 гостевых визита в подарок)</name>
+        <description>Срок действия — 60 дней.</description>
+        <price>17400</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>5</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="20">
+        <name>Пробное занятие — холодные направления</name>
+        <price>800</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>6</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="21">
+        <name>Пробное занятие — горячие направления 36°</name>
+        <price>1200</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>6</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="22">
+        <name>Разовое занятие — холодные направления</name>
+        <price>1200</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>6</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="23">
+        <name>Разовое занятие — горячие направления 36°</name>
+        <price>1900</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>6</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+    </offers>
+  </shop>
+</yml_catalog>
