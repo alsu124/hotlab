@@ -278,6 +278,25 @@ section{position:relative}
 .admin-note .c-ico{font-size:1.6rem}
 .admin-note p{color:var(--text-dark-muted);font-size:.92rem}
 
+/* ===================== TIMETABLE (расписание по дням) ===================== */
+.timetable{position:relative;z-index:2;margin-bottom:36px}
+.tt-tabs{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;margin-bottom:24px;scrollbar-width:none}
+.tt-tabs::-webkit-scrollbar{display:none}
+.tt-tab{flex:0 0 auto;font-family:var(--sans);font-size:.82rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;
+  color:var(--text-muted);background:transparent;border:1px solid var(--line-dark);border-radius:40px;padding:12px 24px;
+  cursor:pointer;transition:.35s var(--ease)}
+.tt-tab:hover{border-color:var(--gold);color:var(--text-cream)}
+.tt-tab.active{background:var(--gold);border-color:var(--gold);color:var(--bg-deep)}
+.tt-panels{background:rgba(242,236,232,.05);border:1px solid var(--line-dark);border-radius:14px;padding:36px 40px}
+.tt-panel{display:none}
+.tt-panel.active{display:block;animation:ttFade .4s var(--ease)}
+@keyframes ttFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.tt-day-title{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--gold);margin-bottom:18px}
+.tt-row{display:flex;align-items:baseline;gap:24px;padding:14px 0;border-top:1px solid var(--line-dark)}
+.tt-row:first-of-type{border-top:none}
+.tt-time{flex:0 0 64px;font-family:var(--serif);font-size:1.15rem;color:var(--text-cream)}
+.tt-name{color:var(--text-muted);font-size:.95rem}
+
 /* ===================== BLOG TEASER ===================== */
 .blog-teaser{background:var(--bg-brown);padding:110px 0}
 .blog-teaser-head{max-width:640px;margin-bottom:44px}
@@ -464,6 +483,7 @@ section{position:relative}
   .hero-facts{gap:26px;max-width:360px}
   .contact-tiles{grid-template-columns:1fr 1fr}
   .schedule-panel{padding:36px 24px}
+  .tt-panels{padding:28px 22px}
   .site-header .nav.open{display:flex;position:absolute;top:100%;left:0;width:100%;flex-direction:column;background:rgba(42,10,8,.96);padding:26px 32px;gap:22px;margin:0;border-bottom:1px solid var(--line-dark)}
 }
 @media(max-width:560px){

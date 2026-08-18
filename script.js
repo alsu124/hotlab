@@ -35,6 +35,30 @@ document.querySelectorAll('.reveal').forEach((el, i) => {
   io.observe(el);
 });
 
+// ---- Расписание по дням (слайды) ----
+(function () {
+  const tabs = document.getElementById('ttTabs');
+  const panels = document.getElementById('ttPanels');
+  if (!tabs || !panels) return;
+
+  const tabEls = tabs.querySelectorAll('.tt-tab');
+  const panelEls = panels.querySelectorAll('.tt-panel');
+
+  function showDay(day) {
+    tabEls.forEach((t) => t.classList.toggle('active', t.dataset.day === day));
+    panelEls.forEach((p) => p.classList.toggle('active', p.dataset.day === day));
+  }
+
+  tabs.addEventListener('click', (e) => {
+    const btn = e.target.closest('.tt-tab');
+    if (!btn) return;
+    showDay(btn.dataset.day);
+  });
+
+  const days = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+  showDay(days[new Date().getDay()]);
+})();
+
 // ---- Contact form → Telegram ----
 const form = document.getElementById('ctaForm');
 const statusEl = document.getElementById('ctaStatus');
