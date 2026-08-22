@@ -1,3 +1,10 @@
+// ---- Service worker (кэширование статики на повторных визитах) ----
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  });
+}
+
 // ---- Header shrink on scroll ----
 const header = document.getElementById('siteHeader');
 const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 40);
@@ -34,6 +41,20 @@ document.querySelectorAll('.reveal').forEach((el, i) => {
   el.style.transitionDelay = `${(i % 4) * 100}ms`;
   io.observe(el);
 });
+
+// ---- Ленивая загрузка фоновых изображений ----
+const bgObserver = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      const el = e.target;
+      if (el.dataset.bg) el.style.backgroundImage = `url('${el.dataset.bg}')`;
+      el.classList.remove('lazy-bg');
+      bgObserver.unobserve(el);
+    }
+  });
+}, { rootMargin: '200px 0px' });
+
+document.querySelectorAll('.lazy-bg[data-bg]').forEach((el) => bgObserver.observe(el));
 
 // ---- Расписание по дням (слайды) ----
 (function () {
