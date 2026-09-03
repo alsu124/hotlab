@@ -1,3 +1,27 @@
+// ---- Уведомление о cookie и Яндекс.Метрике ----
+(function () {
+  if (localStorage.getItem('hlCookieConsent')) return;
+
+  const banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.setAttribute('role', 'region');
+  banner.setAttribute('aria-label', 'Уведомление об использовании cookie');
+  banner.innerHTML =
+    '<p>Мы используем файлы cookie и Яндекс.Метрику для аналитики и улучшения работы сайта. Продолжая пользоваться сайтом, вы соглашаетесь с этим — подробнее в ' +
+      '<a href="politika-konfidencialnosti.html">Политике конфиденциальности</a>.</p>' +
+    '<div class="cookie-banner-actions">' +
+      '<button type="button" class="btn btn-solid" id="cookieAccept">Хорошо, понятно</button>' +
+    '</div>';
+  document.body.appendChild(banner);
+  requestAnimationFrame(() => banner.classList.add('show'));
+
+  banner.querySelector('#cookieAccept').addEventListener('click', () => {
+    localStorage.setItem('hlCookieConsent', '1');
+    banner.classList.remove('show');
+    setTimeout(() => banner.remove(), 400);
+  });
+})();
+
 // ---- Service worker (кэширование статики на повторных визитах) ----
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
@@ -91,6 +115,7 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const name = form.elements['name'].value.trim();
   const phone = form.elements['phone'].value.trim();
+  const marketing = form.elements['marketing'] && form.elements['marketing'].checked;
   const btn = form.querySelector('button[type="submit"]');
 
   statusEl.textContent = 'Отправляем…';
@@ -99,7 +124,8 @@ form.addEventListener('submit', async (e) => {
   const text =
     '🔥 Новая заявка с сайта HOT LAB\n\n' +
     '👤 Имя: ' + (name || '—') + '\n' +
-    '📞 Телефон: ' + (phone || '—');
+    '📞 Телефон: ' + (phone || '—') + '\n' +
+    '📨 Согласие на рассылку: ' + (marketing ? 'да' : 'нет');
 
   try {
     const r = await fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', {
@@ -143,7 +169,11 @@ form.addEventListener('submit', async (e) => {
           '<input type="tel" name="phone" placeholder="Телефон" required />' +
           '<label class="cta-consent">' +
             '<input type="checkbox" name="consent" required />' +
-            '<span>Я согласен(на) на <a href="politika-konfidencialnosti.html" target="_blank" rel="noopener">обработку персональных данных</a></span>' +
+            '<span>Я согласен(на) на <a href="soglasie-na-obrabotku-pdn.html" target="_blank" rel="noopener">обработку персональных данных</a></span>' +
+          '</label>' +
+          '<label class="cta-consent">' +
+            '<input type="checkbox" name="marketing" />' +
+            '<span>Хочу получать новости и акции HOT LAB (<a href="soglasie-na-rassylku.html" target="_blank" rel="noopener">согласие на рассылку</a>)</span>' +
           '</label>' +
           '<button type="submit" class="btn btn-solid">Записаться <span class="arrow">→</span></button>' +
         '</form>' +
@@ -176,6 +206,7 @@ form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = popupForm.elements['name'].value.trim();
       const phone = popupForm.elements['phone'].value.trim();
+      const marketing = popupForm.elements['marketing'] && popupForm.elements['marketing'].checked;
       const btn = popupForm.querySelector('button[type="submit"]');
 
       popupStatus.textContent = 'Отправляем…';
@@ -184,7 +215,8 @@ form.addEventListener('submit', async (e) => {
       const text =
         '🔥 Новая заявка с сайта HOT LAB (всплывающая форма)\n\n' +
         '👤 Имя: ' + (name || '—') + '\n' +
-        '📞 Телефон: ' + (phone || '—');
+        '📞 Телефон: ' + (phone || '—') + '\n' +
+        '📨 Согласие на рассылку: ' + (marketing ? 'да' : 'нет');
 
       try {
         const r = await fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', {
