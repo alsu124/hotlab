@@ -175,7 +175,7 @@ form.addEventListener('submit', async (e) => {
             '<input type="checkbox" name="marketing" />' +
             '<span>Хочу получать новости и акции HOT LAB (<a href="soglasie-na-rassylku.html" target="_blank" rel="noopener">согласие на рассылку</a>)</span>' +
           '</label>' +
-          '<button type="submit" class="btn btn-solid">Записаться <span class="arrow">→</span></button>' +
+          '<button type="submit" class="btn btn-solid" onclick="ym(609504827, \'reachGoal\', \'click_zapisatsya\')">Записаться <span class="arrow">→</span></button>' +
         '</form>' +
         '<p class="popup-status" id="popupStatus"></p>' +
         '<div class="popup-links">' +
