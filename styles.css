@@ -223,6 +223,7 @@ section{position:relative}
 .pl-val.big{font-size:1.9rem}
 .pl-sub{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dark-muted);padding-bottom:4px !important;font-weight:500}
 .price-disclaimer{font-size:.8rem;color:var(--text-dark-muted);line-height:1.5}
+.price-lead{font-size:.92rem;color:var(--text-dark-muted);line-height:1.65;margin:-6px 0 22px;max-width:62ch}
 .price-mechanism{margin-top:22px;padding-top:18px;border-top:1px solid var(--line-light)}
 .pm-title{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dark-muted);margin-bottom:8px;font-weight:500}
 .price-mechanism p{font-size:.86rem;color:var(--text-dark)}

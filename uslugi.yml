@@ -9,6 +9,7 @@
     </currencies>
     <categories>
       <category id="1">Индивидуальные тренировки</category>
+      <category id="2">Абонемент «Всё включено»</category>
       <category id="3">Pilates Reformer</category>
       <category id="4">Групповые направления — холодные</category>
       <category id="5">Групповые направления — горячие 36°</category>
@@ -231,6 +232,33 @@
         <price>14700</price>
         <currencyId>RUB</currencyId>
         <categoryId>7</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="29">
+        <name>Абонемент «Всё включено» — 10 тренировок</name>
+        <description>Все групповые направления Hot Lab: горячие тренировки 36°, reformer в мини-группе, пилатес, силовые, йога, растяжка. 1 600 ₽ за занятие. Срок действия — 30 дней.</description>
+        <price>16000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="30">
+        <name>Абонемент «Всё включено» — 15 тренировок</name>
+        <description>Все групповые направления Hot Lab. 1 450 ₽ за занятие, +1 гостевое занятие в подарок. Срок действия — 30 дней.</description>
+        <price>21750</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
+        <url>https://hotlabstudio.ru/index.html#pricing</url>
+      </offer>
+
+      <offer id="31">
+        <name>Абонемент «Всё включено» — 20 тренировок</name>
+        <description>Все групповые направления Hot Lab. 1 300 ₽ за занятие, +2 гостевых занятия в подарок. Срок действия — 30 дней.</description>
+        <price>26000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>2</categoryId>
         <url>https://hotlabstudio.ru/index.html#pricing</url>
       </offer>
 
