@@ -222,11 +222,7 @@ section{position:relative}
 .pl-val{font-family:var(--serif);font-size:1.15rem;color:var(--text-dark);white-space:nowrap;font-weight:500}
 .pl-val.big{font-size:1.9rem}
 .pl-sub{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dark-muted);padding-bottom:4px !important;font-weight:500}
-.price-hero{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:6px 0 22px;border-bottom:1px solid var(--line-light);margin-bottom:22px}
-.price-bullets{list-style:none;margin-bottom:20px}
-.price-bullets li{position:relative;padding-left:18px;font-size:.9rem;color:var(--text-dark);margin-bottom:8px}
-.price-bullets li::before{content:"·";position:absolute;left:4px;color:var(--gold);font-weight:700}
-.price-note,.price-disclaimer{font-size:.8rem;color:var(--text-dark-muted);line-height:1.5}
+.price-disclaimer{font-size:.8rem;color:var(--text-dark-muted);line-height:1.5}
 .price-mechanism{margin-top:22px;padding-top:18px;border-top:1px solid var(--line-light)}
 .pm-title{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dark-muted);margin-bottom:8px;font-weight:500}
 .price-mechanism p{font-size:.86rem;color:var(--text-dark)}
@@ -397,6 +393,9 @@ section{position:relative}
 .page-text li::before{content:"✔";position:absolute;left:0;color:var(--gold)}
 .page-text .meta{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dark-muted);margin-bottom:30px}
 .page-text .cert-badges{font-family:var(--serif);font-size:1.25rem;color:var(--text-dark);letter-spacing:.02em;margin:26px 0;max-width:none}
+.cert-figure{margin:28px 0;max-width:860px}
+.cert-figure img{width:100%;height:auto;border-radius:12px;box-shadow:0 14px 44px rgba(42,10,8,.16)}
+.cert-figure figcaption{margin-top:12px;font-size:.82rem;color:var(--text-dark-muted);text-align:center}
 .table-wrap{overflow-x:auto;margin:0 0 26px;border:1px solid var(--line-light);border-radius:10px}
 .page-text table{width:100%;border-collapse:collapse;min-width:520px;font-size:.92rem}
 .page-text th,.page-text td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line-light)}

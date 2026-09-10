@@ -9,7 +9,6 @@
     </currencies>
     <categories>
       <category id="1">Индивидуальные тренировки</category>
-      <category id="2">Абонемент "Полный доступ"</category>
       <category id="3">Pilates Reformer</category>
       <category id="4">Групповые направления — холодные</category>
       <category id="5">Групповые направления — горячие 36°</category>
@@ -31,23 +30,6 @@
         <price>2800</price>
         <currencyId>RUB</currencyId>
         <categoryId>1</categoryId>
-        <url>https://hotlabstudio.ru/index.html#pricing</url>
-      </offer>
-
-      <offer id="3">
-        <name>Индивидуальная тренировка — тренер Карина</name>
-        <price>3500</price>
-        <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
-        <url>https://hotlabstudio.ru/index.html#pricing</url>
-      </offer>
-
-      <offer id="4">
-        <name>Абонемент "Полный доступ" — безлимит на 1 месяц</name>
-        <description>Все групповые направления, горячие и cold форматы, Reformer mini groups, 2 гостевых визита в подарок для подруг.</description>
-        <price>23000</price>
-        <currencyId>RUB</currencyId>
-        <categoryId>2</categoryId>
         <url>https://hotlabstudio.ru/index.html#pricing</url>
       </offer>
 
