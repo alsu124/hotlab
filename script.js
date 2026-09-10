@@ -43,10 +43,10 @@ nav.querySelectorAll('a').forEach(a =>
   a.addEventListener('click', () => nav.classList.remove('open'))
 );
 
-// ---- Плавающая кнопка звонка (появляется при прокрутке) ----
-const callFab = document.querySelector('.call-fab');
-if (callFab) {
-  const toggleFab = () => callFab.classList.toggle('show', window.scrollY > 400);
+// ---- Плавающие кнопки связи (появляются при прокрутке) ----
+const fabStack = document.querySelector('.fab-stack');
+if (fabStack) {
+  const toggleFab = () => fabStack.classList.toggle('show', window.scrollY > 400);
   toggleFab();
   window.addEventListener('scroll', toggleFab, { passive: true });
 }

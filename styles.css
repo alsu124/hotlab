@@ -367,13 +367,18 @@ section{position:relative}
 @media(max-width:600px){.cookie-banner{padding:18px;gap:14px}.cookie-banner p{font-size:.78rem}}
 
 /* ===================== ПЛАВАЮЩАЯ КНОПКА ЗВОНКА ===================== */
-.call-fab{position:fixed;right:22px;bottom:22px;z-index:200;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--cream);box-shadow:0 8px 24px rgba(0,0,0,.35);opacity:0;visibility:hidden;cursor:pointer;transform:translateY(16px) scale(.9);transition:opacity .4s var(--ease),transform .4s var(--ease),background .3s}
-.call-fab.show{opacity:1;visibility:visible;transform:none}
+.fab-stack{position:fixed;right:22px;bottom:22px;z-index:200;display:flex;flex-direction:column;gap:14px}
+.fab{position:relative;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.35);opacity:0;visibility:hidden;cursor:pointer;transform:translateY(16px) scale(.9);transition:opacity .4s var(--ease),transform .4s var(--ease),background .3s}
+.fab-stack.show .fab{opacity:1;visibility:visible;transform:none}
+.fab-stack.show .fab:nth-child(2){transition-delay:.06s}
+.fab svg{position:relative;z-index:1;pointer-events:none}
+.call-fab{background:var(--gold);color:var(--cream)}
 .call-fab:hover{background:var(--cream)}
-.call-fab svg{position:relative;z-index:1;pointer-events:none}
 .call-fab::before{content:"";position:absolute;inset:0;border-radius:50%;animation:fabPulse 2.2s infinite}
+.tg-fab{background:#229ED9;color:#fff}
+.tg-fab:hover{background:#1b87ba}
 @keyframes fabPulse{0%{box-shadow:0 0 0 0 rgba(193,119,96,.45)}70%{box-shadow:0 0 0 15px rgba(193,119,96,0)}100%{box-shadow:0 0 0 0 rgba(193,119,96,0)}}
-@media(max-width:600px){.call-fab{width:52px;height:52px;right:16px;bottom:16px}}
+@media(max-width:600px){.fab-stack{right:16px;bottom:16px}.fab{width:52px;height:52px}}
 
 /* ===================== SUBPAGES (направления) ===================== */
 .breadcrumb{font-size:.72rem;letter-spacing:.06em;color:var(--text-muted);margin-bottom:22px}
