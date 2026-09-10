@@ -514,6 +514,11 @@ section{position:relative}
 .reveal.in{opacity:1;transform:none}
 
 /* ===================== RESPONSIVE ===================== */
+@media(max-width:1180px){
+  .nav{gap:15px}
+  .nav-link{font-size:.7rem;letter-spacing:.08em}
+  .nav{margin-right:16px}
+}
 @media(max-width:960px){
   .nav,.btn-header{display:none}
   .burger{display:flex}
