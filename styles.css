@@ -391,6 +391,7 @@ section{position:relative}
 .page-text li{position:relative;padding-left:26px;color:var(--text-dark-muted);font-size:1rem;line-height:1.7;margin-bottom:8px}
 .page-text li::before{content:"✔";position:absolute;left:0;color:var(--gold)}
 .page-text .meta{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dark-muted);margin-bottom:30px}
+.page-text .cert-badges{font-family:var(--serif);font-size:1.25rem;color:var(--text-dark);letter-spacing:.02em;margin:26px 0;max-width:none}
 .table-wrap{overflow-x:auto;margin:0 0 26px;border:1px solid var(--line-light);border-radius:10px}
 .page-text table{width:100%;border-collapse:collapse;min-width:520px;font-size:.92rem}
 .page-text th,.page-text td{text-align:left;padding:14px 18px;border-bottom:1px solid var(--line-light)}
