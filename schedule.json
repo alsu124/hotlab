@@ -1,0 +1,186 @@
+{
+ "days": {
+  "mon": [
+   {
+    "time": "9.00",
+    "name": "Йога (cold)"
+   },
+   {
+    "time": "9.00",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "12.00",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "13.00",
+    "name": "Горячая Силовая + Растяжка 36'"
+   },
+   {
+    "time": "16.00",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "17.30",
+    "name": "Барре (cold)"
+   },
+   {
+    "time": "18.30",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "19.30",
+    "name": "Горячая Йога 36'"
+   }
+  ],
+  "tue": [
+   {
+    "time": "9.00",
+    "name": "Барре (cold)"
+   },
+   {
+    "time": "10.00",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "12.30",
+    "name": "Горячий Пилатес 36'"
+   },
+   {
+    "time": "17.00",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "18.00",
+    "name": "Горячий Силовой Пилатес 36'"
+   },
+   {
+    "time": "18.30",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "19.30",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "19.30",
+    "name": "Горячая Растяжка 36'"
+   }
+  ],
+  "wed": [
+   {
+    "time": "10.00",
+    "name": "Hot МФР 36'/Глубокое Расслабление и Раскатка"
+   },
+   {
+    "time": "11.00",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "13.00",
+    "name": "Горячая Йога 36'"
+   },
+   {
+    "time": "17.30",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "18.30",
+    "name": "Силовой Пилатес (cold)"
+   }
+  ],
+  "thu": [
+   {
+    "time": "10.30",
+    "name": "Горячая Силовая + Растяжка 36'"
+   },
+   {
+    "time": "13.00",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "18.30",
+    "name": "Горячий Пилатес 36'"
+   },
+   {
+    "time": "18.30",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "19.30",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "19.45",
+    "name": "Горячая Силовая + Растяжка 36'"
+   }
+  ],
+  "fri": [
+   {
+    "time": "10.00",
+    "name": "Горячая Йога 36'"
+   },
+   {
+    "time": "11.10",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "17.30",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "18.30",
+    "name": "Горячая Йога 36'"
+   },
+   {
+    "time": "18.30",
+    "name": "Pilates Reformer mini group"
+   }
+  ],
+  "sat": [
+   {
+    "time": "11.00",
+    "name": "Горячая Йога 36'"
+   },
+   {
+    "time": "13.00",
+    "name": "Hot МФР 36'/Глубокое Расслабление и Раскатка"
+   },
+   {
+    "time": "14.15",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "15.00",
+    "name": "Пилатес Мат (cold)"
+   },
+   {
+    "time": "17.00",
+    "name": "Pilates Reformer mini group"
+   }
+  ],
+  "sun": [
+   {
+    "time": "11.30",
+    "name": "Горячая Силовая + Растяжка 36'"
+   },
+   {
+    "time": "13.00",
+    "name": "Силовая (БодиФит) (cold)"
+   },
+   {
+    "time": "13.00",
+    "name": "Pilates Reformer mini group"
+   },
+   {
+    "time": "17.00",
+    "name": "Горячий Силовой Пилатес 36'"
+   },
+   {
+    "time": "18.00",
+    "name": "Pilates Reformer mini group"
+   }
+  ]
+ }
+}
