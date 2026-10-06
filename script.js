@@ -105,7 +105,7 @@ document.querySelectorAll('.lazy-bg[data-bg]').forEach((el) => bgObserver.observ
 })();
 
 // ---- Заявки → воркер Cloudflare → Telegram (токен бота хранится только в воркере) ----
-const LEAD_URL = 'https://hotlab-leads.WORKERS_SUBDOMAIN.workers.dev/lead';
+const LEAD_URL = 'https://hotlab-leads.hotlab-leads.workers.dev/lead';
 
 async function sendLead(payload) {
   const r = await fetch(LEAD_URL, {
