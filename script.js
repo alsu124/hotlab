@@ -104,11 +104,22 @@ document.querySelectorAll('.lazy-bg[data-bg]').forEach((el) => bgObserver.observ
   showDay(days[new Date().getDay()]);
 })();
 
-// ---- Contact form → Telegram ----
+// ---- Заявки → воркер Cloudflare → Telegram (токен бота хранится только в воркере) ----
+const LEAD_URL = 'https://hotlab-leads.WORKERS_SUBDOMAIN.workers.dev/lead';
+
+async function sendLead(payload) {
+  const r = await fetch(LEAD_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  const d = await r.json();
+  if (!d.ok) throw new Error('lead');
+}
+
+// ---- Contact form ----
 const form = document.getElementById('ctaForm');
 const statusEl = document.getElementById('ctaStatus');
-const TG_TOKEN = '8903006123:AAF3B7_8CTBAhKHXz1hrpRw7vbfSZfnqNsk';
-const TG_CHAT = '-5367894062';
 
 if (form) {
 form.addEventListener('submit', async (e) => {
@@ -121,20 +132,8 @@ form.addEventListener('submit', async (e) => {
   statusEl.textContent = 'Отправляем…';
   btn.disabled = true;
 
-  const text =
-    '🔥 Новая заявка с сайта HOT LAB\n\n' +
-    '👤 Имя: ' + (name || '—') + '\n' +
-    '📞 Телефон: ' + (phone || '—') + '\n' +
-    '📨 Согласие на рассылку: ' + (marketing ? 'да' : 'нет');
-
   try {
-    const r = await fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: TG_CHAT, text: text })
-    });
-    const d = await r.json();
-    if (!d.ok) throw new Error('tg');
+    await sendLead({ name: name, phone: phone, marketing: !!marketing, source: 'form' });
     statusEl.textContent = 'Спасибо, ' + (name || 'друг') + '! Мы свяжемся с вами в ближайшее время.';
     form.reset();
   } catch (err) {
@@ -212,20 +211,8 @@ form.addEventListener('submit', async (e) => {
       popupStatus.textContent = 'Отправляем…';
       btn.disabled = true;
 
-      const text =
-        '🔥 Новая заявка с сайта HOT LAB (всплывающая форма)\n\n' +
-        '👤 Имя: ' + (name || '—') + '\n' +
-        '📞 Телефон: ' + (phone || '—') + '\n' +
-        '📨 Согласие на рассылку: ' + (marketing ? 'да' : 'нет');
-
       try {
-        const r = await fetch('https://api.telegram.org/bot' + TG_TOKEN + '/sendMessage', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: TG_CHAT, text: text })
-        });
-        const d = await r.json();
-        if (!d.ok) throw new Error('tg');
+        await sendLead({ name: name, phone: phone, marketing: !!marketing, source: 'popup' });
         popupStatus.textContent = 'Спасибо, ' + (name || 'друг') + '! Мы свяжемся с вами в ближайшее время.';
         popupForm.reset();
         setTimeout(closePopup, 2500);
