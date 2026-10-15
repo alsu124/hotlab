@@ -144,6 +144,34 @@ form.addEventListener('submit', async (e) => {
 });
 }
 
+// ---- Форма заявки «Корпоративным клиентам» ----
+const corpForm = document.getElementById('corpForm');
+const corpStatusEl = document.getElementById('corpFormStatus');
+
+if (corpForm) {
+corpForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const company = corpForm.elements['company'].value.trim();
+  const name = corpForm.elements['name'].value.trim();
+  const phone = corpForm.elements['phone'].value.trim();
+  const interest = corpForm.elements['interest'].value;
+  const btn = corpForm.querySelector('button[type="submit"]');
+
+  corpStatusEl.textContent = 'Отправляем…';
+  btn.disabled = true;
+
+  try {
+    await sendLead({ name: name, phone: phone, company: company, interest: interest, source: 'corporate_form' });
+    corpStatusEl.textContent = 'Спасибо, ' + (name || 'друг') + '! Мы свяжемся с вами в ближайшее время.';
+    corpForm.reset();
+  } catch (err) {
+    corpStatusEl.textContent = 'Не удалось отправить. Позвоните нам: 8 (993) 925-49-23';
+  } finally {
+    btn.disabled = false;
+  }
+});
+}
+
 // ---- Всплывающая форма записи (через 10 сек на сайте) ----
 (function () {
   if (sessionStorage.getItem('hlPopupShown')) return;

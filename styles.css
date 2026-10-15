@@ -387,6 +387,29 @@ section{position:relative}
 .corp-inner .link-arrow{display:block;margin-top:18px;color:var(--text-dark-muted)}
 @media(max-width:600px){.corp-section{padding:56px 22px}}
 
+/* ===================== CORPORATE LANDING ===================== */
+.corp-plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-light)}
+.corp-plan-grid .promo-card ul{list-style:none;margin:16px 0 0;padding:0}
+.corp-plan-grid .promo-card li{position:relative;padding-left:20px;font-size:.88rem;color:var(--text-dark-muted);line-height:1.6;margin-bottom:8px}
+.corp-plan-grid .promo-card li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+.corp-plan-grid .promo-card.dark li{color:var(--text-muted)}
+.corp-note{background:var(--cream-panel);border-left:3px solid var(--gold);padding:16px 22px;border-radius:4px;font-size:.92rem;color:var(--text-dark);max-width:70ch;margin:0 0 26px}
+.corp-form-section{background:var(--bg-deep);color:var(--text-cream);padding:100px 24px;text-align:center}
+.corp-form-section .eyebrow{display:block;margin-bottom:10px}
+.corp-form-section h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:14px;color:var(--text-cream)}
+.corp-form-section > p{color:var(--text-muted);margin-bottom:34px;max-width:50ch;margin-left:auto;margin-right:auto}
+.corp-form{display:flex;flex-direction:column;gap:16px;max-width:440px;margin:0 auto;text-align:left}
+.corp-form input,.corp-form select{background:transparent;border:1px solid var(--line-dark);border-radius:10px;padding:14px 18px;font-family:var(--sans);font-size:.92rem;color:var(--text-cream);width:100%}
+.corp-form select option{color:#111}
+.corp-form input::placeholder{color:var(--text-muted)}
+.corp-form input:focus,.corp-form select:focus{outline:none;border-color:var(--gold)}
+.corp-form label.cta-consent{display:flex;gap:10px;align-items:flex-start;font-size:.8rem;color:var(--text-muted)}
+.corp-form input[type="checkbox"]{-webkit-appearance:none;appearance:none;background:transparent;border:1px solid var(--line-dark);border-radius:4px;width:17px;height:17px;min-width:17px;padding:0;margin:3px 0 0;flex-shrink:0;cursor:pointer;position:relative}
+.corp-form input[type="checkbox"]:checked{background:var(--gold);border-color:var(--gold)}
+.corp-form input[type="checkbox"]:checked::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.72rem;color:#fff}
+.corp-form-status{margin-top:16px;font-size:.85rem;color:var(--text-muted)}
+@media(max-width:900px){.corp-plan-grid{grid-template-columns:1fr}}
+
 /* ===================== COOKIE BANNER ===================== */
 .cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:900;background:var(--bg-deep);color:var(--text-cream);border-top:1px solid var(--line-dark);padding:20px 24px;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;transform:translateY(100%);transition:transform .4s var(--ease)}
 .cookie-banner.show{transform:translateY(0)}
