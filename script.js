@@ -7,8 +7,8 @@
   banner.setAttribute('role', 'region');
   banner.setAttribute('aria-label', 'Уведомление об использовании cookie');
   banner.innerHTML =
-    '<p>Мы используем файлы cookie и Яндекс.Метрику для аналитики и улучшения работы сайта. Продолжая пользоваться сайтом, вы соглашаетесь с этим — подробнее в ' +
-      '<a href="politika-konfidencialnosti.html">Политике конфиденциальности</a>.</p>' +
+    '<p>Мы используем файлы cookie и Яндекс.Метрику для аналитики и улучшения работы сайта — подробнее в ' +
+      '<a href="politika-konfidencialnosti.html">Политике конфиденциальности</a>. Нажимая «Хорошо, понятно», вы соглашаетесь с этим.</p>' +
     '<div class="cookie-banner-actions">' +
       '<button type="button" class="btn btn-solid" id="cookieAccept">Хорошо, понятно</button>' +
     '</div>';
@@ -17,6 +17,7 @@
 
   banner.querySelector('#cookieAccept').addEventListener('click', () => {
     localStorage.setItem('hlCookieConsent', '1');
+    if (window.hlInitMetrika) window.hlInitMetrika();
     banner.classList.remove('show');
     setTimeout(() => banner.remove(), 400);
   });
