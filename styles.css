@@ -587,3 +587,15 @@ section{position:relative}
   .dir-grid{grid-template-columns:1fr}
   .dir-card{max-width:360px;margin:0 auto;width:100%}
 }
+
+/* Страница акций: размытое фото в шапке и плавные переходы между секциями */
+.page-hero.hero-blur{position:relative;isolation:isolate;padding-bottom:110px}
+.page-hero.hero-blur::before{content:"";position:absolute;inset:0;z-index:0;background:var(--hero-bg) center 45%/cover no-repeat;filter:blur(10px) saturate(.85);transform:scale(1.12)}
+.page-hero.hero-blur::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(42,10,8,.82) 0%,rgba(42,10,8,.6) 45%,rgba(42,10,8,.72) 74%,var(--cream) 100%)}
+.page-hero.hero-blur .container{padding-bottom:20px}
+.soft-flow .promo-grid{margin-top:0;border-radius:14px;overflow:hidden;box-shadow:0 18px 50px rgba(42,10,8,.1)}
+.soft-flow .promo-card{transition:background .5s var(--ease)}
+.corp-section.soft{border:0;padding:110px 24px 120px;background:linear-gradient(180deg,var(--cream) 0%,var(--cream-panel) 32%,var(--cream-panel) 100%)}
+.page-cta.soft{padding:150px 0 110px;background:linear-gradient(180deg,var(--cream-panel) 0%,var(--bg-brown) 130px,var(--bg-brown) 100%)}
+.page-cross.soft{padding-top:140px;background:linear-gradient(180deg,var(--bg-brown) 0%,var(--cream) 120px,var(--cream) 100%)}
+@media(max-width:600px){.page-hero.hero-blur{padding-bottom:80px}.corp-section.soft{padding:80px 22px 90px}.page-cta.soft{padding:120px 0 80px}.page-cross.soft{padding-top:110px}}
