@@ -1,4 +1,4 @@
-const CACHE_NAME = 'hotlab-v3';
+const CACHE_NAME = 'hotlab-v4';
 const PRECACHE = [
   '/styles.min.css',
   '/script.min.js',
