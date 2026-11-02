@@ -321,7 +321,7 @@ section{position:relative}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 .footer-brand{display:flex;align-items:center;gap:20px;font-size:.82rem;color:var(--text-muted)}
 .hl-circle{width:52px;height:52px;border:1px solid var(--line-dark);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);letter-spacing:.08em}
-.footer-nav{display:flex;gap:40px}
+.footer-nav{display:flex;flex-wrap:wrap;gap:14px 32px}
 .footer-nav a{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);transition:.3s}
 .footer-nav a:hover{color:var(--cream)}
 .footer-legal{margin-top:18px;padding-top:18px;border-top:1px solid var(--line-dark)}
@@ -599,3 +599,13 @@ section{position:relative}
 .page-cta.soft{padding:150px 0 110px;background:linear-gradient(180deg,var(--cream-panel) 0%,var(--bg-brown) 130px,var(--bg-brown) 100%)}
 .page-cross.soft{padding-top:140px;background:linear-gradient(180deg,var(--bg-brown) 0%,var(--cream) 120px,var(--cream) 100%)}
 @media(max-width:600px){.page-hero.hero-blur{padding-bottom:80px}.corp-section.soft{padding:80px 22px 90px}.page-cta.soft{padding:120px 0 80px}.page-cross.soft{padding-top:110px}}
+
+/* Закреплённая кнопка «Записаться» на смартфонах */
+.sticky-book{display:none}
+@media(max-width:760px){
+  .sticky-book{display:block;position:fixed;left:0;right:0;bottom:0;z-index:300;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(42,10,8,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line-dark)}
+  .sticky-book .btn{width:100%;justify-content:center;padding:14px 20px}
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+  .fab-stack{bottom:calc(84px + env(safe-area-inset-bottom))}
+}
+@media(max-width:560px){.community-slider{margin:0 -20px;padding:4px 20px 16px}}

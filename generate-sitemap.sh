@@ -8,7 +8,6 @@ priority_for() {
     index.html) echo "1.0" ;;
     pilates-reformer.html|goryachaya-yoga.html|goryachiy-pilates.html|goryachaya-rastyazhka.html|goryachie-trenirovki.html|raspisanie-i-tseny.html|probnoe-zanyatie.html|kontakty.html|otzyvy.html|o-kompanii.html) echo "0.8" ;;
     blog.html) echo "0.7" ;;
-    oferta.html|politika-konfidencialnosti.html|soglasie-na-obrabotku-pdn.html|soglasie-na-rassylku.html) echo "0.3" ;;
     *) echo "0.6" ;;
   esac
 }
@@ -16,7 +15,6 @@ priority_for() {
 changefreq_for() {
   case "$1" in
     index.html|raspisanie-i-tseny.html|blog.html) echo "weekly" ;;
-    oferta.html|politika-konfidencialnosti.html|soglasie-na-obrabotku-pdn.html|soglasie-na-rassylku.html) echo "yearly" ;;
     *) echo "monthly" ;;
   esac
 }
@@ -27,6 +25,8 @@ out="sitemap.xml"
   echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
   for f in *.html; do
     case "$f" in yandex_*) continue ;; esac
+    # noindex-страницы (юридические, редиректы) в sitemap не попадают
+    grep -q '<meta name="robots" content="noindex' "$f" && continue
     url=$(grep -o 'rel="canonical" href="[^"]*"' "$f" | head -1 | sed -E 's/.*href="([^"]*)".*/\1/')
     if [ -z "$url" ]; then
       url="https://hotlabstudio.ru/$f"

@@ -52,6 +52,17 @@ if (fabStack) {
   window.addEventListener('scroll', toggleFab, { passive: true });
 }
 
+// ---- Закреплённая кнопка «Записаться» на смартфонах ----
+(function () {
+  const bar = document.createElement('div');
+  bar.className = 'sticky-book';
+  bar.innerHTML = '<a href="https://n1938413.yclients.com" target="_blank" rel="noopener" class="btn btn-solid">Записаться <span class="arrow">→</span></a>';
+  bar.querySelector('a').addEventListener('click', () => {
+    if (window.ym) { ym(111681952, 'reachGoal', 'click_zapisatsya'); ym(609504827, 'reachGoal', 'click_zapisatsya'); }
+  });
+  document.body.appendChild(bar);
+})();
+
 // ---- Reveal on scroll ----
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => {
@@ -135,7 +146,7 @@ form.addEventListener('submit', async (e) => {
 
   try {
     await sendLead({ name: name, phone: phone, marketing: !!marketing, source: 'form' });
-    statusEl.textContent = 'Спасибо, ' + (name || 'друг') + '! Мы свяжемся с вами в ближайшее время.';
+    statusEl.textContent = 'Спасибо, мы перезвоним!';
     form.reset();
   } catch (err) {
     statusEl.textContent = 'Не удалось отправить. Позвоните нам: 8 (993) 925-49-23';
