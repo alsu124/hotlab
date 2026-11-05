@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ИИ-агент для бизнеса — гайд, что умеет агент и сколько стоит. HOT LAB, @Alsu.">
+<meta property="og:title" content="ИИ-агент для бизнеса">
+<meta property="og:description" content="Передайте рутину ИИ: сайт, заявки, маркетинг и отчёты. Пакеты и цены.">
+<meta property="og:type" content="website">
+<style>html,body{margin:0}img{max-width:100%}</style>
+<title>ИИ-агент для бизнеса</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+  /* Layout: single reading column on warm paper; section bands separated by hairlines;
+     serif display + grotesque body, one ember accent grounded in the "heat" of a hot-yoga brand. */
+  :root {
+    --bg: #faf7f1;
+    --surface: #ffffff;
+    --surface-2: #f3ede3;
+    --fg: #1d1a16;
+    --muted: #6d6456;
+    --line: #e6ded1;
+    --accent: #c0442a;
+    --accent-soft: #f6e3da;
+    --amber: #d98a2b;
+    --good: #2f7d53;
+    font-size: 17px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17140f;
+      --surface: #201c16;
+      --surface-2: #272118;
+      --fg: #f0e9dd;
+      --muted: #a59a88;
+      --line: #342d22;
+      --accent: #e46a4a;
+      --accent-soft: #3a241c;
+      --amber: #e3a24f;
+      --good: #5ab583;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17140f;
+    --surface: #201c16;
+    --surface-2: #272118;
+    --fg: #f0e9dd;
+    --muted: #a59a88;
+    --line: #342d22;
+    --accent: #e46a4a;
+    --accent-soft: #3a241c;
+    --amber: #e3a24f;
+    --good: #5ab583;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Hanken Grotesk", system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding-left: max(20px, env(safe-area-inset-left, 0px));
+    padding-right: max(20px, env(safe-area-inset-right, 0px));
+    padding-block: clamp(2.2rem, 6vw, 4rem) 4rem;
+  }
+  h1, h2, h3 {
+    font-family: "Fraunces", Georgia, serif;
+    text-wrap: balance;
+    line-height: 1.1;
+    font-weight: 600;
+  }
+  h1 { font-size: clamp(2.3rem, 7vw, 3.4rem); letter-spacing: -0.01em; margin: 0; }
+  h2 {
+    font-size: clamp(1.5rem, 4.2vw, 2rem);
+    margin: 0 0 0.9rem;
+    padding-top: 0.2rem;
+  }
+  h3 { font-size: 1.12rem; margin: 1.6rem 0 0.4rem; font-weight: 600; }
+  p { margin: 0 0 1rem; }
+  a { color: var(--accent); }
+  strong { font-weight: 600; }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 0 1rem;
+  }
+  .byline { color: var(--muted); font-size: 0.9rem; margin: 1rem 0 0; }
+  .lead { font-size: 1.14rem; color: var(--fg); }
+
+  section { margin-top: 3.2rem; }
+  section > .num {
+    font-family: "Fraunces", Georgia, serif;
+    color: var(--accent);
+    font-size: 0.95rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .rule { height: 1px; background: var(--line); border: 0; margin: 3.2rem 0 0; }
+
+  /* Table of contents */
+  .toc {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.3rem 1.5rem;
+    margin-top: 2.4rem;
+  }
+  .toc h4 { margin: 0 0 0.7rem; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-family: inherit; font-weight: 700; }
+  .toc ol { margin: 0; padding-left: 1.2rem; columns: 2; column-gap: 1.6rem; }
+  .toc li { margin-bottom: 0.35rem; }
+  .toc a { color: var(--fg); text-decoration: none; }
+  .toc a:hover { color: var(--accent); }
+
+  /* Data tables */
+  .tbl { width: 100%; }
+  .tbl-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; margin: 1.2rem 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.96rem; min-width: 30rem; }
+  thead th {
+    background: var(--surface-2);
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.75rem 1rem;
+  }
+  td { padding: 0.8rem 1rem; border-top: 1px solid var(--line); vertical-align: top; }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+  tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 45%, transparent); }
+
+  ul.clean, ul.check { list-style: none; padding: 0; margin: 1rem 0; }
+  ul.clean li, ul.check li { position: relative; padding-left: 1.6rem; margin-bottom: 0.6rem; }
+  ul.clean li::before { content: "—"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  ul.check li::before { content: "✓"; position: absolute; left: 0; color: var(--good); font-weight: 800; }
+
+  .callout {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 12px 12px 0;
+    padding: 1rem 1.3rem;
+    margin: 1.4rem 0;
+  }
+  .callout p { margin: 0; }
+  .callout p + p { margin-top: 0.5rem; }
+
+  .price-tag {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    color: var(--accent);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .pkg-grid { display: grid; gap: 1rem; margin: 1.4rem 0; }
+  .pkg {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.3rem 1.4rem;
+    background: var(--surface);
+  }
+  .pkg.feature { border-color: var(--accent); box-shadow: 0 1px 0 var(--accent) inset, 0 0 0 1px var(--accent); }
+  .pkg .pname { font-family: "Fraunces", Georgia, serif; font-size: 1.25rem; font-weight: 600; }
+  .pkg .pprice { color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; margin: 0.1rem 0 0.7rem; }
+  .pkg .pdesc { color: var(--muted); font-size: 0.95rem; margin: 0; }
+
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem 2rem; margin-top: 1rem; }
+  .cols h3 { margin-top: 0; }
+  @media (max-width: 560px) { .cols { grid-template-columns: 1fr; } .toc ol { columns: 1; } }
+
+  .foot { margin-top: 3.5rem; padding-top: 1.6rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+</style>
+
+<div class="wrap">
+
+  <p class="eyebrow">Гайд для владельцев бизнеса</p>
+  <h1>ИИ-агент, который берёт рутину на себя</h1>
+  <p class="byline">5 ноября 2026 · @Alsu · HOT LAB</p>
+
+  <p class="lead" style="margin-top:1.6rem;">Этот гайд для тех, кто хочет передать рутину ИИ, а не нанимать ещё помощников, маркетологов и дизайнеров. За 10 минут вы поймёте, что умеет агент, с каких задач начать и как ему писать.</p>
+  <p>Он пригодится, если у вас свой бизнес, студия, услуги или личный бренд, и вы тонете в сообщениях, правках сайта, отчётах и напоминаниях.</p>
+
+  <nav class="toc" aria-label="Содержание">
+    <h4>В этом гайде</h4>
+    <ol>
+      <li><a href="#chto">Что такое ИИ-агент</a></li>
+      <li><a href="#napravleniya">Что агенты делают</a></li>
+      <li><a href="#seo">Маркетинг и SEO</a></li>
+      <li><a href="#crm">CRM, 1С и данные</a></li>
+      <li><a href="#start">С чего начать</a></li>
+      <li><a href="#kak-pisat">Как писать агенту</a></li>
+      <li><a href="#podklyuchenie">Как подключаем</a></li>
+      <li><a href="#bezopasnost">Безопасность и закон</a></li>
+      <li><a href="#reshenie">Решение за вами</a></li>
+      <li><a href="#ceny">Пакеты и цены</a></li>
+      <li><a href="#obuchenie">Следующий шаг</a></li>
+    </ol>
+  </nav>
+
+  <section id="chto">
+    <span class="num">01</span>
+    <h2>Что такое ИИ-агент</h2>
+    <p>ИИ-агент — это помощник, который не просто отвечает в чате, а сам делает работу в ваших сервисах. Вы пишете ему обычными словами — он готовит результат.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section id="napravleniya">
+    <span class="num">02</span>
+    <h2>Что мои агенты делают за меня</h2>
+    <p>У меня агенты ведут больше десятка направлений. Выберите те, что отнимают у вас больше всего времени.</p>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Направление</th><th>Что делает агент</th></tr></thead>
+        <tbody>
+          <tr><td>Утренний брифинг</td><td>Календарь на день, непрочитанные, ключевые задачи, дедлайны и финансы — в одной сводке</td></tr>
+          <tr><td>Аналитика</td><td>Отчёты по запросу за минуты, динамика и выводы</td></tr>
+          <tr><td>CRM и 1С</td><td>Подключается к 1С, amoCRM, Битрикс24, YCLIENTS и др.: собирает продажи, клиентскую базу, повторные покупки и конверсию, находит точки роста</td></tr>
+          <tr><td>Маркетинг и SEO</td><td>Анализ конкурентов и запросов по нише, семантика, SEO-статьи, данные из рекламных кабинетов: что работает, сколько стоит клиент, где оптимизировать</td></tr>
+          <tr><td>Заявки с сайта</td><td>Форма на сайте → заявка сразу падает в Telegram: агент уведомляет вас, готовит ответ клиенту и заносит контакт в CRM — ни одна заявка не теряется</td></tr>
+          <tr><td>Сообщения</td><td>WhatsApp, Telegram, SMS, несколько почт и MAX: читает, сортирует, готовит ответы</td></tr>
+          <tr><td>Визуалы</td><td>Слайды для заказчиков, КП, отчёты, карусели</td></tr>
+          <tr><td>Приложения</td><td>Собирает простые инструменты по описанию словами</td></tr>
+          <tr><td>Сайты</td><td>Лендинги и правки сайта без подрядчиков</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="seo">
+    <span class="num">03</span>
+    <h2>Маркетинг и SEO: как агент продвигает сайт</h2>
+    <p>Агент работает с вашим собственным сайтом и кабинетами — это легально и не грозит блокировками площадок. Он собирает данные, пишет тексты и внедряет их прямо на сайт.</p>
+    <ul class="clean">
+      <li><strong>Анализ конкурентов и запросов по нише</strong> — что ищут ваши клиенты и по чему вас находят (и не находят)</li>
+      <li><strong>Семантика</strong> — собираем ключевые слова по агрегаторам и геосервисам вашей ниши</li>
+      <li><strong>ТЗ и SEO-статьи</strong> — тексты под ключевые слова с нужным объёмом и структурой</li>
+      <li><strong>Яндекс.Метрика на каждой странице</strong> — чтобы видеть, что реально работает</li>
+      <li><strong>Регистрация на рекламных площадках</strong> и настройка продвижения</li>
+      <li><strong>Дорожная карта проекта</strong> — что делаем и в каком порядке</li>
+      <li><strong>Фирменный стиль, айдентика, брендбук</strong> — единый вид сайта и материалов</li>
+    </ul>
+    <div class="callout">
+      <p><strong>Важно про SEO:</strong> позиции в поиске растут неделями, а не за два дня. Агент работает в спокойном темпе по расписанию — это и эффективнее, и безопаснее для аккаунтов.</p>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="crm">
+    <span class="num">04</span>
+    <h2>CRM, 1С и данные</h2>
+    <p>Агент подключается к вашим системам учёта и сводит данные в понятные отчёты — без ручной выгрузки.</p>
+    <ul class="clean">
+      <li><strong>Подключение к 1С, amoCRM, Битрикс24, YCLIENTS</strong> и другим системам</li>
+      <li>Продажи, клиентская база, повторные покупки, конверсия, отток</li>
+      <li><strong>Заявки с сайта → в Telegram:</strong> агент принимает заявку, отвечает клиенту и заносит контакт в базу</li>
+      <li>Отчёты под ваш доступ — например, ежедневная выручка в Telegram</li>
+      <li>Поиск точек роста: кого вернуть, где теряете, что продаётся лучше</li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section id="start">
+    <span class="num">05</span>
+    <h2>С чего начать: 3 первые задачи</h2>
+    <p>Начните с одной задачи, которая повторяется каждую неделю. Если она забирает больше часа — это идеальный первый кандидат.</p>
+    <ul class="clean">
+      <li><strong>Утренний брифинг.</strong> Календарь, сообщения и задачи в одной сводке. Эффект виден с первого дня.</li>
+      <li><strong>Правки сайта.</strong> Расписание, цены, акции — без подрядчика и ожидания.</li>
+      <li><strong>Входящие.</strong> Агент сортирует сообщения и готовит черновики ответов, вы только утверждаете.</li>
+    </ul>
+    <h3>Что подготовить до старта</h3>
+    <ul class="check">
+      <li>Список задач, которые повторяются каждую неделю</li>
+      <li>Сервисы, с которыми вы работаете: сайт, почта, мессенджеры, CRM, календарь</li>
+      <li>Одна задача, которую хотите отдать первой</li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section id="kak-pisat">
+    <span class="num">06</span>
+    <h2>Как писать агенту</h2>
+    <p>Пишите как коллеге: что сделать, где и к какому сроку. Чем конкретнее сообщение, тем меньше уточнений.</p>
+    <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Задача</th><th>Что написать</th></tr></thead>
+        <tbody>
+          <tr><td>Брифинг</td><td>«Собери сводку на сегодня: встречи, непрочитанные, срочные задачи»</td></tr>
+          <tr><td>Сайт</td><td>«В среду добавь занятие в 18.30»</td></tr>
+          <tr><td>Аналитика</td><td>«Сравни заявки за этот и прошлый месяц и скажи, что изменилось»</td></tr>
+          <tr><td>Найм</td><td>«Собери отчёт по трём кандидатам и подготовь им ответы»</td></tr>
+          <tr><td>Визуал</td><td>«Сделай 5 слайдов для заказчика по итогам месяца»</td></tr>
+          <tr><td>Напоминание</td><td>«Напомни за 15 минут до созвона и пришли слайды»</td></tr>
+          <tr><td>Порядок</td><td>«Разложи Загрузки по папкам и покажи дубликаты»</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr class="rule">
+
+  <section id="podklyuchenie">
+    <span class="num">07</span>
+    <h2>Как подключаем агента</h2>
+    <p>Под каждое направление агент получает доступы и инструкцию, по которой работает сам.</p>
+    <ul class="clean">
+      <li><strong>Браузерное подключение + VS Code.</strong> Через браузер агент работает в ваших кабинетах (аналитика, реклама, CRM), через VS Code — с сайтом и файлами</li>
+      <li><strong>План и ТЗ на каждое направление</strong> — что именно агент делает и в каком порядке</li>
+      <li><strong>Скил агента</strong> — инструкция-навык, по которой он выполняет задачу одинаково каждый раз</li>
+      <li><strong>Параметры контента</strong> — например, минимальное количество символов на страницу и структура статей</li>
+      <li><strong>Обучение</strong> — показываем, как с агентом работать и как создавать новые скилы</li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section id="bezopasnost">
+    <span class="num">08</span>
+    <h2>Безопасность и закон</h2>
+    <p>Агент работает с вашими данными и доступами, поэтому безопасность — часть подключения, а не опция.</p>
+    <ul class="clean">
+      <li><strong>Политики РКН и 152-ФЗ</strong> — помощь с политикой обработки персональных данных на сайте</li>
+      <li><strong>Защита от утечек</strong> — у агента только нужные доступы, разграничение прав, ничего лишнего</li>
+      <li><strong>«Упаковка» сайта</strong> с точки зрения безопасности и защиты данных</li>
+    </ul>
+    <h3>Финмодель и деньги</h3>
+    <ul class="clean">
+      <li>Ведение финансовой модели</li>
+      <li>Движение денежных средств (ДДС) — куда уходят и откуда приходят деньги</li>
+    </ul>
+  </section>
+
+  <hr class="rule">
+
+  <section id="reshenie">
+    <span class="num">09</span>
+    <h2>Решение всегда за вами</h2>
+    <p>Агент готовит — вы утверждаете.</p>
+    <ul class="check">
+      <li>Перед публикацией вы видите, что было и что станет</li>
+      <li>Любую правку можно вернуть назад</li>
+      <li>Запуск рекламы и бюджет подтверждаете вы</li>
+      <li>Файлы агент удаляет только после вашего подтверждения</li>
+    </ul>
+    <p style="color:var(--muted);font-size:0.95rem;">Возможности интеграций и автоматических изменений зависят от ваших сервисов, доступов и настроек.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section id="ceny">
+    <span class="num">10</span>
+    <h2>Пакеты и цены</h2>
+    <p>Услуги разделены на направления — <strong>создание сайта</strong>, <strong>маркетинг</strong> и <strong>обучение</strong>. Берутся отдельно или вместе. Цены ориентировочные — точную сумму называем после бесплатного 15-минутного разбора.</p>
+
+    <p class="eyebrow" style="margin:2rem 0 0.8rem;">Создание сайта</p>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="pname">Подключение</div>
+        <div class="pprice">от 20 000 ₽</div>
+        <p class="pdesc">Сайт уже есть: подключаем агента, заявки в Telegram, доступы, обучаем.</p>
+      </div>
+      <div class="pkg">
+        <div class="pname">Старт</div>
+        <div class="pprice">45 000–50 000 ₽</div>
+        <p class="pdesc">Одностраничный сайт, домен и публикация, заявки в Telegram, агент для владельца, обучение.</p>
+      </div>
+      <div class="pkg">
+        <div class="pname">Стандарт</div>
+        <div class="pprice">110 000–125 000 ₽</div>
+        <p class="pdesc">Сайт на 5–8 страниц, Telegram-агент для расписания и заявок, подключение CRM/1С по запросу.</p>
+      </div>
+      <div class="pkg feature">
+        <div class="pname">Расширенный</div>
+        <div class="pprice">190 000–200 000 ₽</div>
+        <p class="pdesc">Сайт как у HOT LAB, ещё один агент, отчёты из YCLIENTS и подключение к CRM/1С под ваш доступ. Маркетинг — отдельным пакетом ниже.</p>
+      </div>
+    </div>
+
+    <p class="eyebrow" style="margin:2.4rem 0 0.8rem;">Маркетинг</p>
+    <p>Продвижение сайта и реклама. Можно добавить к любому пакету сайта или взять отдельно, если сайт уже есть.</p>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="pname">SEO-аудит и семантика</div>
+        <div class="pprice">от 15 000 ₽ · разово</div>
+        <p class="pdesc">Анализ конкурентов и запросов по нише, сбор ключевых слов, ТЗ на тексты, дорожная карта продвижения.</p>
+      </div>
+      <div class="pkg">
+        <div class="pname">SEO и контент</div>
+        <div class="pprice">от 20 000 ₽ / мес</div>
+        <p class="pdesc">SEO-статьи по ключам, Яндекс.Метрика на каждой странице, отчёты по позициям и трафику, правки сайта.</p>
+      </div>
+      <div class="pkg">
+        <div class="pname">Реклама</div>
+        <div class="pprice">~30 000 ₽ + бюджет от 20 000 ₽</div>
+        <p class="pdesc">Регистрация на рекламных площадках, запуск и ведение. Рекламный бюджет оплачивается отдельно.</p>
+      </div>
+    </div>
+
+    <p class="eyebrow" style="margin:2.4rem 0 0.8rem;">Обучение работе с ИИ (Claude)</p>
+    <p>Если хотите не заказывать «под ключ», а научиться делать самостоятельно — учим настраивать и вести агента на Claude.</p>
+    <div class="pkg-grid">
+      <div class="pkg">
+        <div class="pname">Базовое обучение</div>
+        <div class="pprice">от 10 000 ₽</div>
+        <p class="pdesc">Настройка аккаунта и доступов, как писать задачи агенту, разбор на ваших примерах. Индивидуально или в группе.</p>
+      </div>
+      <div class="pkg">
+        <div class="pname">Обучение + свой агент</div>
+        <div class="pprice">от 25 000 ₽</div>
+        <p class="pdesc">Вместе создаём вашего агента и подключаем к сайту, CRM и рекламным кабинетам. Учим создавать новые скилы и вести его дальше самим.</p>
+      </div>
+    </div>
+
+    <h3>Сопровождение — 3 000 ₽ в месяц</h3>
+    <p>К любому пакету: контроль сайта, продление домена и сертификатов, помощь.</p>
+
+    <div class="cols">
+      <div>
+        <h3>Докупить отдельно</h3>
+        <ul class="clean">
+          <li>Ещё один агент</li>
+          <li>Подключение CRM / 1С</li>
+          <li>Фирменный стиль, айдентика, брендбук</li>
+          <li>Ведение финмодели и ДДС</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Оплачивается отдельно</h3>
+        <ul class="clean">
+          <li>Домен — от 200–1 000 ₽ в год</li>
+          <li>Хостинг сайта — от 0 ₽ (GitHub Pages) до ~150–500 ₽ в месяц</li>
+          <li>Подписка на ИИ — 2 000–3 000 ₽ в месяц</li>
+        </ul>
+      </div>
+    </div>
+    <p style="color:var(--muted);font-size:0.95rem;">Итоговая цена зависит от числа страниц, ваших текстов и фото и кругов правок.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section id="obuchenie">
+    <span class="num">11</span>
+    <h2>Следующий шаг: обучение</h2>
+    <p>На обучении мы сначала создадим вам собственного ИИ-агента и подключим его к сайту, CRM и рекламным кабинетам. Он объединит маркетинг, аналитику и операционку в одну систему. Далее покажем, как правильно с ним работать и как создавать новые скилы.</p>
+    <div class="cols">
+      <div>
+        <h3>Маркетинг</h3>
+        <p style="margin:0;color:var(--muted);">Реклама и продвижение, контент и SEO-тексты, анализ конкурентов, управление сайтом.</p>
+      </div>
+      <div>
+        <h3>Операционка</h3>
+        <p style="margin:0;color:var(--muted);">CRM и отчёты, работа с клиентской базой и оттоком, бизнес-ассистент 24/7.</p>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:1.6rem;">
+      <p>Чтобы узнать дату и формат обучения — напишите мне в директ: Telegram / Instagram.</p>
+    </div>
+  </section>
+
+  <p class="foot">Гайд: ИИ-агент для бизнеса · HOT LAB · @Alsu</p>
+
+</div>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap">
+</body>
+</html>
