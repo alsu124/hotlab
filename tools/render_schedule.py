@@ -7,6 +7,9 @@
 
 Блок между <!-- SCHEDULE:START --> и <!-- SCHEDULE:END --> на страницах PAGES
 полностью перезаписывается. Остальное в HTML не трогается.
+
+На любых других страницах блок между <!-- SCHEDULE-LIST:START match="регулярка" -->
+и <!-- SCHEDULE-LIST:END --> заполняется выборкой занятий, чьё название подходит под регулярку.
 """
 import html, json, os, re, sys
 
@@ -71,6 +74,28 @@ def render(days):
     return '\n'.join(out).rstrip('\n')
 
 
+LIST_RE = re.compile(r'(<!-- SCHEDULE-LIST:START match="([^"]+)" -->)(.*?)(<!-- SCHEDULE-LIST:END -->)', re.S)
+LIST_IND = ' ' * 6
+
+
+def render_list(days, pattern):
+    """Выборка занятий по регулярному выражению pattern — для страниц направлений."""
+    rx = re.compile(pattern, re.I)
+    out = ['<ul class="sched-list">']
+    for key, title in DAYS:
+        rows = [it for it in sorted(days[key], key=sort_key) if rx.search(it['name'])]
+        if not rows:
+            continue
+        items = '<br>'.join('%s — %s' % (it['time'], html.escape(it['name'], quote=False)) for it in rows)
+        out.append('  <li><span class="sched-day">%s</span><span class="sched-items">%s</span></li>' % (title, items))
+    out.append('</ul>')
+    return '\n'.join(LIST_IND + line for line in out)
+
+
+def apply_lists(text, days):
+    return LIST_RE.sub(lambda m: m.group(1) + '\n' + render_list(days, m.group(2)) + '\n' + LIST_IND + m.group(4), text)
+
+
 def apply(text, block):
     a, b = text.find(START), text.find(END)
     if a < 0 or b < 0 or b < a:
@@ -83,11 +108,18 @@ def main():
     days = load_and_validate(os.path.join(ROOT, 'schedule.json'))
     block = render(days)
     changed = []
-    for page in PAGES:
+    list_pages = []
+    for name in sorted(os.listdir(ROOT)):
+        if name.endswith('.html') and name not in PAGES:
+            with open(os.path.join(ROOT, name), encoding='utf-8') as f:
+                if 'SCHEDULE-LIST:START' in f.read():
+                    list_pages.append(name)
+    for page in PAGES + list_pages:
         p = os.path.join(ROOT, page)
         with open(p, encoding='utf-8') as f:
             old = f.read()
-        new = apply(old, block)
+        new = apply(old, block) if page in PAGES else old
+        new = apply_lists(new, days)
         if new != old:
             changed.append(page)
             if not check:

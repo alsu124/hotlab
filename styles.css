@@ -609,3 +609,30 @@ section{position:relative}
   .fab-stack{bottom:calc(84px + env(safe-area-inset-bottom))}
 }
 @media(max-width:560px){.community-slider{margin:0 -20px;padding:4px 20px 16px}}
+
+/* Коммерческие страницы: цена в первом экране, карточки форматов, расписание, отзывы */
+.hero-offer{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin-top:6px}
+.hero-offer-price{font-family:var(--serif);font-size:1.25rem;color:var(--text-cream)}
+.hero-offer-price b{color:var(--gold);font-weight:500}
+.fmt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:22px 0 30px}
+.page-text .fmt-card{display:flex;flex-direction:column;gap:8px;background:var(--cream-panel);border:1px solid var(--line-light);border-radius:10px;padding:22px 22px 20px;color:var(--text-dark);text-decoration:none;transition:transform .35s var(--ease),background .35s var(--ease)}
+.page-text .fmt-card:hover{transform:translateY(-3px);background:#fff}
+.fmt-card b{font-family:var(--serif);font-weight:500;font-size:1.2rem;line-height:1.25}
+.fmt-card span{font-size:.9rem;color:var(--text-dark-muted);line-height:1.6}
+.fmt-card em{margin-top:auto;padding-top:6px;font-style:normal;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.page-text .sched-list{list-style:none;margin:18px 0 14px;padding:0;border-top:1px solid var(--line-light)}
+.page-text .sched-list li{display:grid;grid-template-columns:150px 1fr;gap:6px 20px;padding:14px 0;border-bottom:1px solid var(--line-light);margin:0}
+.page-text .sched-list li::before{display:none}
+.sched-day{font-family:var(--serif);font-size:1.1rem;color:var(--text-dark)}
+.sched-items{color:var(--text-dark-muted)}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:22px 0 14px}
+.page-text .review-card{margin:0;background:var(--cream-panel);border:1px solid var(--line-light);border-radius:10px;padding:22px 24px}
+.page-text .review-card p{font-size:.94rem;margin:0 0 12px}
+.review-card cite{font-style:normal;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+@media(max-width:560px){.page-text .sched-list li{grid-template-columns:1fr}}
+.dir-more{margin-top:30px;font-size:.92rem;color:var(--text-dark-muted)}
+.dir-more a{color:var(--text-dark);text-decoration:underline;text-underline-offset:3px}
+.pl-note{margin-top:16px;font-size:.8rem;color:var(--text-dark-muted)}
+.pl-note a{color:var(--text-dark);text-decoration:underline}
+.page-hero .hero-men-note{margin-top:18px;padding-left:16px;border-left:2px solid var(--gold);color:var(--text-cream)}
+.page-hero .hero-offer .link-arrow{color:var(--text-cream)}
