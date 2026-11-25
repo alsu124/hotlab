@@ -116,6 +116,16 @@
   </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/111681952" style="position:absolute; left:-9999px;" alt="" /><img src="https://mc.yandex.ru/watch/609504827" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
+<style>
+  .page-hero h1.display { font-size: clamp(1.6rem, 7vw, 5rem); white-space: nowrap; }
+  .schedule .schedule-hero { max-width: none; margin-bottom: clamp(1.5rem, 4vw, 3rem); }
+  .schedule-hero .section-title.big { font-size: clamp(2rem, 5vw, 4rem); text-wrap: balance; }
+  #timetable { max-width: 52rem; }
+  #ttTabs { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: clamp(3px, 1vw, 10px); }
+  #ttTabs .tt-tab { padding: 12px 0; }
+  #ttPanels { padding: clamp(16px, 3vw, 36px); }
+  #ttPanels .tt-row { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: 1rem; }
+</style>
 </head>
 <body>
 
@@ -154,7 +164,7 @@
   <section class="schedule section-dark" style="padding-top:70px">
     <div class="container schedule-hero reveal">
       <span class="eyebrow">Расписание</span>
-      <h2 class="section-title big">Тренировки<br>по дням недели</h2>
+      <h2 class="section-title big">Тренировки по дням недели</h2>
     </div>
     <div class="container">
       <div class="timetable reveal" id="timetable">
