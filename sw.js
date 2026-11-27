@@ -1,6 +1,6 @@
-const CACHE_NAME = 'hotlab-v6';
+const CACHE_NAME = 'hotlab-v7';
 const PRECACHE = [
-  '/styles.min.css',
+  '/styles.min.css?v=7',
   '/script.min.js',
   '/favicon.svg'
 ];
